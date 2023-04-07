@@ -1,8 +1,10 @@
+import Carosel from './components/Carosel';
+import {images} from './services/images';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello word</h1>
+      <Carosel images={images}/>
     </div>
   );
 }
