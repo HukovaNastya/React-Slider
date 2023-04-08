@@ -1,5 +1,5 @@
 import Carosel from './components/Carosel';
-import {images} from './services/images';
+import images from './services/images';
 
 function App() {
   return (
