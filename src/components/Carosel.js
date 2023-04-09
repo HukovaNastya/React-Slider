@@ -8,12 +8,12 @@ const Carosel = ({images}) => {
     top: '400px'
    }
    const sliderStyles = {
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '300px',
+    objectFit: 'cover',
     borderRadius: "10px",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    backgroundImage: `url(${images[currentIndex].path})`
    }
 
    const leftArrowStyles = {
@@ -61,7 +61,8 @@ const Carosel = ({images}) => {
     <div style={sliderContainer}>
      <div style={leftArrowStyles} onClick={handlePrevImage}>{'<'}</div>
        <div style={rightArrowStyles} onClick={handleNextImage}>{'>'}</div>
-         <div style={sliderStyles}>
+         <div >
+          <img style={sliderStyles} src={images[currentIndex].path}></img>
          </div>
        </div>
   )
