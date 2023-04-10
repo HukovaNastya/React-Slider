@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
-const Carosel = ({images}) => {
-   const [currentIndex, setCurrentIndex] = useState(0);
+import React from 'react';
+const Carousel = ({images, currentImg, setCurrentImg}) => {
 
    const sliderContainer = {
     position: 'relative',
@@ -39,33 +38,36 @@ const Carosel = ({images}) => {
    }
 
    const handlePrevImage = () => {
-    const isFirstSlide = currentIndex === 0;
-    if(!isFirstSlide) {
-      setCurrentIndex(currentIndex - 1)
-    }
-    else {
-       setCurrentIndex(images.length - 1);
+    let currentIndex = images.findIndex((image) => image.id === currentImg.id)
+    console.log(currentIndex)
+    console.log(currentImg.id)
+    if(currentIndex === 0){
+      setCurrentImg(images[images.length-1])
+    } else {
+      setCurrentImg(images[currentIndex-1])
     }
    }
 
    const handleNextImage = () => {
-    const isLastSlide = currentIndex === images.length-1;
-    if(!isLastSlide) {
-      return setCurrentIndex(currentIndex + 1)
-    }
-    else {
-       return setCurrentIndex(0);
+    let currentIndex = images.findIndex((image) => image.id === currentImg.id)
+    console.log(currentIndex)
+    console.log(currentImg.id)
+    console.log(images.length-1)
+    if(currentIndex === images.length-1){
+      setCurrentImg(images[0])
+    } else {
+      setCurrentImg(images[currentIndex+ 1])
     }
    }
   return (
     <div style={sliderContainer}>
      <div style={leftArrowStyles} onClick={handlePrevImage}>{'<'}</div>
        <div style={rightArrowStyles} onClick={handleNextImage}>{'>'}</div>
-         <div >
-          <img style={sliderStyles} src={images[currentIndex].path}></img>
+         <div>
+          <img style={sliderStyles} src={currentImg.path}></img>
          </div>
        </div>
   )
 }
 
-export default Carosel;
+export default Carousel;

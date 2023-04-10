@@ -1,4 +1,5 @@
-import Carosel from './components/Carosel';
+import React, {useState} from 'react';
+import Carousel from './components/Carousel';
 import images from './services/images';
 
 const containerStyles = {
@@ -8,10 +9,11 @@ const containerStyles = {
 };
 
 function App() {
+  const [currentImg, setCurrentImg] = useState(images[0]);
   return (
     <div>
       <div style={containerStyles}>
-        <Carosel images={images}/>
+        <Carousel images={images} currentImg={currentImg} setCurrentImg={setCurrentImg}/>
       </div>
     </div>
  
