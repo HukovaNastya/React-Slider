@@ -3,12 +3,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .carousel-img{
   padding: 30px;
-  width: 900px;
-  height: 600px;
+  width: 700px;
+  height: 500px;
   object-fit: cover;
   border-radius: 20px;
   background-size: cover;
