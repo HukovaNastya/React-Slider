@@ -1,41 +1,29 @@
 import React from 'react';
+import {CarouselButton} from './CarouselButton ';
+import './Carousel.css';
+
 const Carousel = ({images, currentImg, setCurrentImg}) => {
-   const sliderContainer = {
-    position: 'relative',
-    height: '100%',
-    top: '400px'
-   }
+  //  const leftArrowStyles = {
+  //   position: 'absolute',
+  //   top: '50%',
+  //   transform: 'translate(0, -50%)',
+  //   left: '20px',
+  //   fontSize: '60px',
+  //   color: 'white',
+  //   zIndex: 1,
+  //   cursor: 'pointer',
+  //  }
 
-   const sliderStyles = {
-    width: '100%',
-    height: '300px',
-    objectFit: 'cover',
-    borderRadius: "10px",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-   }
-
-   const leftArrowStyles = {
-    position: 'absolute',
-    top: '50%',
-    transform: 'translate(0, -50%)',
-    left: '20px',
-    fontSize: '60px',
-    color: 'white',
-    zIndex: 1,
-    cursor: 'pointer',
-   }
-
-   const rightArrowStyles = {
-    position: 'absolute',
-    top: '50%',
-    transform: 'translate(0, -50%)',
-    right: '20px',
-    fontSize: '60px',
-    color: 'white',
-    zIndex: 1,
-    cursor: 'pointer',
-   }
+  //  const rightArrowStyles = {
+  //   position: 'absolute',
+  //   top: '50%',
+  //   transform: 'translate(0, -50%)',
+  //   right: '20px',
+  //   fontSize: '60px',
+  //   color: 'white',
+  //   zIndex: 1,
+  //   cursor: 'pointer',
+  //  }
    
    let currentIndex = images.findIndex((image) => image.id === currentImg.id);
 
@@ -56,14 +44,14 @@ const Carousel = ({images, currentImg, setCurrentImg}) => {
    }
 
   return (
-    <div style={sliderContainer}>
-     <div style={leftArrowStyles} onClick={handlePrevImage}>{'<'}</div>
-       <div style={rightArrowStyles} onClick={handleNextImage}>{'>'}</div>
-         <div>
-           <img style={sliderStyles} src={currentImg.path}/>
-          {/* <img style={sliderStyles} src={currentImg.path} onClick={}></img> */}
-         </div>
-       </div>
+    <div  className='carousel-container'>
+      <CarouselButton style={{left: '550px'}} onClick={handlePrevImage}>{'<'}</CarouselButton>
+      <CarouselButton style={{right: '550px'}} onClick={handleNextImage}>{'>'}</CarouselButton>
+      <div className='carousel-container-img'>
+        <img className='carousel-img' src={currentImg.path}/>
+        {/* <img style={sliderStyles} src={currentImg.path} onClick={}></img> */}
+      </div>
+    </div>
   )
 }
 
