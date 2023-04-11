@@ -5,9 +5,10 @@ import './components/Carousel.css';
 
 function App() {
   const [currentImg, setCurrentImg] = useState(images[0]);
+  const [showModal, setShowModal] = useState(false);
   return (
     <div>
-      <Carousel images={images} currentImg={currentImg} setCurrentImg={setCurrentImg}/>
+      <Carousel images={images} currentImg={currentImg} setCurrentImg={setCurrentImg} setShowModal={setShowModal} showModal={showModal}/>
     </div>
   );
 }
