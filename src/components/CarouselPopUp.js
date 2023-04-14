@@ -9,18 +9,15 @@ const CarouselPopUp = ({setShowModal, showModal, currentImg}) => {
     <>
       {
         showModal? (
-         <div className='carousel-pop-up-container'>
-           <div className='pop-up-wrapper'>
-             <img className='pop-up-img' src={currentImg.path}/>
-             <button className='pop-up-btn' onClick={closePopUp}>X</button>
-           </div>
-         </div>
+          <div className='carousel-pop-up-container'>
+            <div className='pop-up-wrapper'>
+              <img className='pop-up-img' src={currentImg.path}/>
+              <button className='pop-up-btn' onClick={closePopUp}>X</button>
+            </div>
+          </div>
         ):null
       }
-
-
     </>
-
   )
 }
 

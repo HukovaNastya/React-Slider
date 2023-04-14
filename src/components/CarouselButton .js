@@ -9,11 +9,8 @@ export const CarouselButton = styled.button`
   color: #5F5F5F;
   font-size: 28px;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
   background: #FFFFFF;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
-  align-items: center;
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 400;

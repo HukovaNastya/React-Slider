@@ -1,16 +1,15 @@
-.carousel-container{
-  height: 100vh;
+.carousel-wrapper{
+  margin-top: 200px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  /* z-index: 1; */
 }
 
 .carousel-img{
   padding: 30px;
-  width: 700px;
-  height: 500px;
+  width: 900px;
+  height: 400px;
   object-fit: cover;
   border-radius: 20px;
   background-size: cover;
@@ -26,14 +25,10 @@
   z-index: 100;
 }
 
-.pop-up-wrapper{
-  position: relative;
-}
-
 .pop-up-img {
   padding: 20px;
-  width: 1800px;
-  height: 1000px;
+  width: 1200px;
+  height: 600px;
   object-fit: cover;
   border-radius: 30px;
   background-size: cover;
